@@ -23,6 +23,16 @@ create table books_details (
     foreign key (book_id) references books (id)
 );
 
+create table books_reviews (
+    id bigserial primary key,
+    book_id bigint,
+    author varchar(255),
+    review text,
+    rate smallint,
+    created_at timestamp with time zone default now(),
+    foreign key (book_id) references books (id)
+);
+
 insert into categories (title) values ('Категория 1'), ('Категория 2'), ('Категория 3');
 
 insert into authors (full_name) values ('Толкиен'), ('Роулинг'), ('Сандерсон'), ('Азимов');
@@ -44,3 +54,9 @@ insert into books_details (book_id, description) values
   (5, 'Книга про Рожденного туманом'),
   (6, 'Книга про Архив Буресвета'),
   (7, 'Книга про Академию. Основная трилогия');
+
+insert into books_reviews (book_id, author, review, rate) values
+  (1, 'Анонимный автор', 'Хорошая книга', 10),
+  (1, 'Секретный автор', 'Интересный сюжет', 7),
+  (2, 'Маг', 'Очень много магии', 8),
+  (3, 'Маг', 'Очень много магии', 7);
