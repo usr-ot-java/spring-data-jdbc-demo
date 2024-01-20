@@ -2,13 +2,12 @@ package ru.flamexander.spring.data.jdbc.demo.dtos;
 
 import ru.flamexander.spring.data.jdbc.demo.entities.Genre;
 
-public class DetailedBookDto {
+public class TopBookDto {
     private Long id;
     private String title;
     private Genre genre;
     private String authorName;
     private String description;
-    private Double rate;
 
     public Long getId() {
         return id;
@@ -50,14 +49,6 @@ public class DetailedBookDto {
         this.description = description;
     }
 
-    public Double getRate() {
-        return rate;
-    }
-
-    public void setRate(Double rate) {
-        this.rate = rate;
-    }
-
-    public DetailedBookDto() {
+    public TopBookDto() {
     }
 }
